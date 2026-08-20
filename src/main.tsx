@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowRight, Check, ChevronDown, Instagram, Menu, MessageCircle, Star, X } from 'lucide-react'
 import './styles.css'
 
 const services = [
@@ -36,10 +35,10 @@ function App() {
           <button onClick={() => scrollTo('work')}>Our work</button>
           <button onClick={() => scrollTo('about')}>About</button>
           <button onClick={() => scrollTo('quote')}>Contact</button>
-          <button className="nav-cta" onClick={() => scrollTo('quote')}>Free quote <ArrowRight size={16}/></button>
+          <button className="nav-cta" onClick={() => scrollTo('quote')}>Free quote <span aria-hidden="true">→</span></button>
         </nav>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu">
-          {menuOpen ? <X /> : <Menu />}
+          <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
         </button>
       </header>
 
@@ -50,11 +49,11 @@ function App() {
           <h1>Floors fitted<br/><em>properly.</em></h1>
           <p className="hero-copy">Quality workmanship, careful preparation and a clean finish from the first cut to the final detail.</p>
           <div className="hero-actions">
-            <button className="primary" onClick={() => scrollTo('quote')}>Get a free quote <ArrowRight size={18}/></button>
+            <button className="primary" onClick={() => scrollTo('quote')}>Get a free quote <span aria-hidden="true">→</span></button>
             <button className="secondary" onClick={() => scrollTo('work')}>View our work</button>
           </div>
         </div>
-        <button className="scroll-cue" onClick={() => scrollTo('services')}>Explore <ChevronDown size={16}/></button>
+        <button className="scroll-cue" onClick={() => scrollTo('services')}>Explore <span aria-hidden="true">↓</span></button>
       </section>
 
       <section id="services" className="section light">
@@ -102,9 +101,9 @@ function App() {
           <h2>Local service.<br/>Premium finish.</h2>
           <p>A flooring company built around straightforward advice, reliable workmanship and results you are proud to live with.</p>
           <ul>
-            {['Free no-obligation quotations','Careful floor preparation','Residential & commercial work','Clean, tidy installation'].map(item => <li key={item}><Check size={18}/>{item}</li>)}
+            {['Free no-obligation quotations','Careful floor preparation','Residential & commercial work','Clean, tidy installation'].map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}
           </ul>
-          <button className="text-link" onClick={() => scrollTo('quote')}>Talk about your project <ArrowRight size={18}/></button>
+          <button className="text-link" onClick={() => scrollTo('quote')}>Talk about your project <span aria-hidden="true">→</span></button>
         </div>
       </section>
 
@@ -112,7 +111,7 @@ function App() {
         <div className="review-copy">
           <p className="eyebrow">Built on recommendations</p>
           <h2>Good work gets talked about.</h2>
-          <div className="stars">{[1,2,3,4,5].map(i => <Star key={i} size={22} fill="currentColor"/>)}</div>
+          <div className="stars" aria-label="Five stars">★★★★★</div>
           <p className="review-note">Add genuine Google and Facebook reviews here once the site is live.</p>
         </div>
         <div className="review-card">
@@ -127,21 +126,21 @@ function App() {
           <p className="eyebrow dark">Start a project</p>
           <h2>Ready for a new floor?</h2>
           <p>Tell us what you are looking for and we will get back to you about a free quotation.</p>
-          <div className="quote-tags"><span><MessageCircle size={16}/> Quick replies</span><span><Check size={16}/> No obligation</span></div>
+          <div className="quote-tags"><span>Quick replies</span><span>✓ No obligation</span></div>
         </div>
         <form className="quote-form" onSubmit={(e) => {e.preventDefault(); setSubmitted(true)}}>
           <label>Name<input required placeholder="Your name" /></label>
           <label>Phone<input required placeholder="Your phone number" inputMode="tel" /></label>
           <label>What flooring are you interested in?<select defaultValue=""><option value="" disabled>Select a service</option>{services.map(([s]) => <option key={s}>{s}</option>)}</select></label>
           <label>Tell us about the job<textarea rows={4} placeholder="Room size, flooring type, location, timescale…" /></label>
-          <button className="primary" type="submit">Request a quote <ArrowRight size={18}/></button>
+          <button className="primary" type="submit">Request a quote <span aria-hidden="true">→</span></button>
           {submitted && <p className="demo-note">Demo form received — connect this to his email/WhatsApp before launch.</p>}
         </form>
       </section>
 
       <footer>
         <div className="footer-brand"><strong>STRAIGHT TO THE FLOORING</strong><span>Quality flooring. Fitted properly.</span></div>
-        <div className="footer-links"><button onClick={() => scrollTo('services')}>Services</button><button onClick={() => scrollTo('work')}>Our work</button><button onClick={() => scrollTo('quote')}>Contact</button><Instagram size={18}/></div>
+        <div className="footer-links"><button onClick={() => scrollTo('services')}>Services</button><button onClick={() => scrollTo('work')}>Our work</button><button onClick={() => scrollTo('quote')}>Contact</button><span>Instagram</span></div>
         <small>© {new Date().getFullYear()} Straight To The Flooring.</small>
       </footer>
     </main>
