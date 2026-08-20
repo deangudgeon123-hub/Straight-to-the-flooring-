@@ -29,11 +29,7 @@ function App() {
     <main>
       <header className="site-header">
         <button className="brand" onClick={() => scrollTo('home')} aria-label="Straight To The Flooring home">
-          <div className="brand-mark">◉</div>
-          <div>
-            <span>STRAIGHT TO THE</span>
-            <strong>FLOORING</strong>
-          </div>
+          <img className="brand-logo" src="/logo.svg" alt="Straight To The Flooring" />
         </button>
         <nav className={menuOpen ? 'nav open' : 'nav'}>
           <button onClick={() => scrollTo('services')}>Services</button>
