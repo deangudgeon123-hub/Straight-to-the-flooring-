@@ -114,12 +114,19 @@ function App() {
           <p className="eyebrow">Built on recommendations</p>
           <h2>Good work gets talked about.</h2>
           <div className="stars" aria-label="Five stars">★★★★★</div>
-          <p className="review-note">Add genuine Google and Facebook reviews here once the site is live.</p>
+          <p className="review-note">100% recommended on Facebook, with genuine customer feedback from completed jobs.</p>
         </div>
-        <div className="review-card">
-          <span>“</span>
-          <blockquote>Professional from start to finish. The attention to detail made a massive difference.</blockquote>
-          <small>Example review placeholder</small>
+        <div className="review-list">
+          <div className="review-card">
+            <span>“</span>
+            <blockquote>Speedy, efficient, trouble free service from start to finish. Great communication & very reasonably priced. Highly recommend.</blockquote>
+            <small>Lynn Wilson · Facebook recommendation</small>
+          </div>
+          <div className="review-card">
+            <span>“</span>
+            <blockquote>Brilliant service! The boys were amazing, worked bloody hard with my difficult old house! Cracking job, thank you.</blockquote>
+            <small>Gemma Warren · Facebook recommendation</small>
+          </div>
         </div>
       </section>
 
