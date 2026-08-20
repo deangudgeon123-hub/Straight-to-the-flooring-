@@ -11,9 +11,9 @@ const services = [
 ]
 
 const projects = [
-  ['Warm oak herringbone', 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85'],
-  ['Contemporary plank flooring', 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85'],
-  ['Light natural finish', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85'],
+  ['Carpet installation', '/images/Carpet1.jpg'],
+  ['Flooring installation', '/images/Flooring3.jpg'],
+  ['Stair carpet finish', '/images/Stairs2.jpg'],
 ]
 
 function App() {
@@ -83,7 +83,7 @@ function App() {
             <p className="eyebrow">Recent work</p>
             <h2>See the finish for yourself.</h2>
           </div>
-          <p>Strong results speak louder than sales talk. Replace these demo images with your mate's real jobs and this section becomes the main selling point.</p>
+          <p>Real installations, real finishes. A closer look at recent flooring work completed with care and attention to detail.</p>
         </div>
         <div className="project-grid">
           {projects.map(([title, image], i) => (
