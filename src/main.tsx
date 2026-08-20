@@ -8,9 +8,9 @@ const services = [
   ['Luxury Vinyl & LVT', 'Clean, durable finishes for busy homes and commercial spaces.'],
   ['Laminate Flooring', 'A sharp, hard-wearing finish installed with careful preparation.'],
   ['Wood Flooring', 'Natural character, precise fitting and a premium finish.'],
-  ['Carpet', 'Comfortable, professionally fitted carpet for rooms, halls, stairs and landings.'],
-  ['Safety Flooring', 'Durable, slip-resistant flooring solutions for commercial and practical spaces.'],
   ['Floor Preparation', 'Subfloor prep, levelling and finishing for a floor that lasts.'],
+  ['Carpet', 'Comfortable, neatly fitted carpet for bedrooms, stairs, halls and living spaces.'],
+  ['Safety Flooring', 'Practical, hard-wearing safety flooring for commercial and high-use areas.'],
 ]
 
 const projects = [
@@ -22,10 +22,43 @@ const projects = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setMenuOpen(false)
+  }
+
+  const submitQuote = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setSubmitError('')
+    setSubmitted(false)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const payload = Object.fromEntries(formData.entries())
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => ({}))
+        throw new Error(result?.error || 'Unable to send your enquiry right now.')
+      }
+
+      form.reset()
+      setSubmitted(true)
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Unable to send your enquiry right now.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -139,13 +172,15 @@ function App() {
           <p>Tell us what you are looking for and we will get back to you about a free quotation.</p>
           <div className="quote-tags"><span>Quick replies</span><span>✓ No obligation</span></div>
         </div>
-        <form className="quote-form" onSubmit={(e) => {e.preventDefault(); setSubmitted(true)}}>
-          <label>Name<input required placeholder="Your name" /></label>
-          <label>Phone<input required placeholder="Your phone number" inputMode="tel" /></label>
-          <label>What flooring are you interested in?<select defaultValue=""><option value="" disabled>Select a service</option>{services.map(([s]) => <option key={s}>{s}</option>)}</select></label>
-          <label>Tell us about the job<textarea rows={4} placeholder="Room size, flooring type, location, timescale…" /></label>
-          <button className="primary" type="submit">Request a quote <span aria-hidden="true">→</span></button>
-          {submitted && <p className="demo-note">Demo form received — connect this to his email/WhatsApp before launch.</p>}
+        <form className="quote-form" onSubmit={submitQuote}>
+          <label>Name<input required name="name" autoComplete="name" placeholder="Your name" /></label>
+          <label>Phone<input required name="phone" autoComplete="tel" placeholder="Your phone number" inputMode="tel" /></label>
+          <label>What flooring are you interested in?<select required name="service" defaultValue=""><option value="" disabled>Select a service</option>{services.map(([s]) => <option key={s}>{s}</option>)}</select></label>
+          <label>Tell us about the job<textarea required name="message" rows={4} placeholder="Room size, flooring type, location, timescale…" /></label>
+          <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{position:'absolute',left:'-9999px'}} />
+          <button className="primary" type="submit" disabled={submitting}>{submitting ? 'Sending…' : 'Request a quote'} {!submitting && <span aria-hidden="true">→</span>}</button>
+          {submitted && <p className="demo-note" role="status">Thanks — your enquiry has been sent. We’ll get back to you soon.</p>}
+          {submitError && <p className="demo-note" role="alert">{submitError}</p>}
         </form>
       </section>
 
