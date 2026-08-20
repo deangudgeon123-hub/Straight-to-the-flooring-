@@ -11,9 +11,9 @@ const services = [
 ]
 
 const projects = [
-  ['Carpet installation', '/images/Carpet1.jpg'],
-  ['Flooring installation', '/images/Flooring3.jpg'],
-  ['Stair carpet finish', '/images/Stairs2.jpg'],
+  ['Carpet installation', '/images/Carpet1.jpg?v=2'],
+  ['Flooring installation', '/images/Flooring3.jpg?v=2'],
+  ['Stair carpet finish', '/images/Stairs2.jpg?v=2'],
 ]
 
 function App() {
