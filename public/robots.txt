@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://straight-to-the-flooring.co.uk/sitemap.xml
