@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles.css'
 import './logo.css'
+import './contact.css'
 
 const services = [
   ['Luxury Vinyl & LVT', 'Clean, durable finishes for busy homes and commercial spaces.'],
