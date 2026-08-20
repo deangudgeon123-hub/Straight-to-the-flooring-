@@ -139,9 +139,39 @@ function App() {
         </form>
       </section>
 
+      <section className="contact-cta-section" aria-label="Contact Straight To The Flooring">
+        <div className="contact-cta-copy">
+          <p className="eyebrow dark">Get in touch</p>
+          <h2>Ready to talk flooring?</h2>
+          <p>Call, email or message us on social media and we’ll get back to you about your project.</p>
+        </div>
+        <div className="contact-cta-grid">
+          <a className="contact-cta-card" href="tel:07858533237">
+            <span className="contact-cta-label">Call now</span>
+            <strong>07858 533237</strong>
+            <span className="contact-cta-arrow" aria-hidden="true">→</span>
+          </a>
+          <a className="contact-cta-card" href="mailto:straighttotheflooring@yahoo.com">
+            <span className="contact-cta-label">Email us</span>
+            <strong>straighttotheflooring@yahoo.com</strong>
+            <span className="contact-cta-arrow" aria-hidden="true">→</span>
+          </a>
+          <a className="contact-cta-card" href="https://www.instagram.com/straight_to_the_flooring?igsi=MTB5eWlsbmM0cTZodg==" target="_blank" rel="noreferrer">
+            <span className="contact-cta-label">Follow us</span>
+            <strong>Instagram</strong>
+            <span className="contact-cta-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a className="contact-cta-card" href="https://www.facebook.com/share/14rtfwyF49f/?mibextid=wwXIfr" target="_blank" rel="noreferrer">
+            <span className="contact-cta-label">Find us on</span>
+            <strong>Facebook</strong>
+            <span className="contact-cta-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
       <footer>
         <div className="footer-brand"><strong>STRAIGHT TO THE FLOORING</strong><span>Quality flooring. Fitted properly.</span></div>
-        <div className="footer-links"><button onClick={() => scrollTo('services')}>Services</button><button onClick={() => scrollTo('work')}>Our work</button><button onClick={() => scrollTo('quote')}>Contact</button><span>Instagram</span></div>
+        <div className="footer-links"><button onClick={() => scrollTo('services')}>Services</button><button onClick={() => scrollTo('work')}>Our work</button><button onClick={() => scrollTo('quote')}>Contact</button><a href="https://www.instagram.com/straight_to_the_flooring?igsi=MTB5eWlsbmM0cTZodg==" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.facebook.com/share/14rtfwyF49f/?mibextid=wwXIfr" target="_blank" rel="noreferrer">Facebook</a></div>
         <small>© {new Date().getFullYear()} Straight To The Flooring.</small>
       </footer>
     </main>
