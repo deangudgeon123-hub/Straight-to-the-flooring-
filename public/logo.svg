@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Straight To The Flooring">
+  <rect width="600" height="600" rx="28" fill="#515151"/>
+  <circle cx="300" cy="300" r="245" fill="none" stroke="#fff" stroke-width="11" opacity=".95"/>
+  <circle cx="300" cy="300" r="233" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>
+  <g fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,-48)">
+    <circle cx="276" cy="192" r="13" fill="#fff" stroke="none"/>
+    <path d="M268 214l-30 51 34 20 25-39 34 12"/>
+    <path d="M270 285l-19 47m22-45l29 45"/>
+    <circle cx="361" cy="280" r="49"/>
+    <circle cx="361" cy="280" r="31"/>
+    <circle cx="361" cy="280" r="12" fill="#fff" stroke="none"/>
+    <path d="M305 332h58"/>
+  </g>
+  <text x="300" y="380" text-anchor="middle" fill="#fff" font-family="Arial Narrow, Arial, sans-serif" font-size="35" letter-spacing="5">STRAIGHT TO THE</text>
+  <text x="300" y="448" text-anchor="middle" fill="#fff" font-family="Arial Narrow, Arial, sans-serif" font-size="68" letter-spacing="2">FLOORING</text>
+</svg>
