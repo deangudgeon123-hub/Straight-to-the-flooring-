@@ -8,6 +8,8 @@ const services = [
   ['Luxury Vinyl & LVT', 'Clean, durable finishes for busy homes and commercial spaces.'],
   ['Laminate Flooring', 'A sharp, hard-wearing finish installed with careful preparation.'],
   ['Wood Flooring', 'Natural character, precise fitting and a premium finish.'],
+  ['Carpet', 'Comfortable, professionally fitted carpet for rooms, halls, stairs and landings.'],
+  ['Safety Flooring', 'Durable, slip-resistant flooring solutions for commercial and practical spaces.'],
   ['Floor Preparation', 'Subfloor prep, levelling and finishing for a floor that lasts.'],
 ]
 
